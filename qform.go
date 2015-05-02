@@ -21,7 +21,7 @@ type Field struct {
 	Name       string
 	Label      string
 	InputType  string
-	Id         string
+	ID         string
 	Attributes map[string]string
 	Options    map[string]string
 }
@@ -138,7 +138,7 @@ select
 							}
 							// store id
 							if name == "id" {
-								field.Id = value
+								field.ID = value
 							}
 							// store name
 							if name == "name" {
@@ -227,7 +227,7 @@ func (*DSL) GenerateOutput(any interface{}) (string, error) {
 	// ensure we have a Model
 	model, ok := any.(*Model)
 	if !ok {
-		return "", errors.New("fastForms error: the appropriate model was not passed into the GenerateOutput function.")
+		return "", errors.New("fastForms error: the appropriate model was not passed into the GenerateOutput function")
 	}
 	// create output pointer
 	output := new(bytes.Buffer)
@@ -251,10 +251,10 @@ func capitalize(input string) string {
 
 func renderFieldLabel(field Field, output *bytes.Buffer) {
 	if field.Label != "" {
-		output.WriteString(Indent + Indent + "<label for=\"" + field.Id + "\">" + field.Label + "</label>\n")
+		output.WriteString(Indent + Indent + "<label for=\"" + field.ID + "\">" + field.Label + "</label>\n")
 	} else {
 		if field.InputType != "submit" {
-			output.WriteString(Indent + Indent + "<label for=\"" + field.Id + "\">" + capitalize(field.Name) + "</label>\n")
+			output.WriteString(Indent + Indent + "<label for=\"" + field.ID + "\">" + capitalize(field.Name) + "</label>\n")
 		}
 	}
 }
@@ -274,8 +274,8 @@ func renderFormFields(fields []Field, output *bytes.Buffer) {
 			field.Name = "field" + strconv.Itoa(i+1)
 			field.Attributes["name"] = field.Name
 		}
-		if field.Id == "" {
-			field.Id = field.Name
+		if field.ID == "" {
+			field.ID = field.Name
 			field.Attributes["id"] = field.Name
 		}
 		// handle field-type-specific output
