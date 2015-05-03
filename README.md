@@ -6,7 +6,7 @@ QForm is a DSL for creating HTML5 forms. It is implemented using Dialects, a rec
 Motivation
 ----------
 
-I get tired of writing and sifting through HTML, but I'm especially lament the redundant, superfluous extravagances of the markup for forms.
+I get tired of writing and sifting through HTML, but I especially lament the redundant, superfluous extravagances of the markup for forms.
 
 Examples
 --------
