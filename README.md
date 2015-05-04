@@ -128,4 +128,4 @@ err = ioutil.WriteFile(outputPath, byteSource, 0777)
 
 ## Using QForm With Polyglot
 
-You can automatically parse files with the QForm DSL using [Polyglot](https://github.com/AdamJonR/polyglot), a program that packages multiple DSL parsers together and allows you parse several different DSLs within the same file.
+You can automatically parse files with the QForm DSL using [Polyglot](https://github.com/AdamJonR/polyglot), a command line application that packages multiple DSL parsers together and allows you parse several different DSLs within the same file.
