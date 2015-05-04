@@ -8,7 +8,7 @@ I get tired of writing and sifting through HTML, but I especially lament the red
 
 ## Examples
 
-A few examples of the basic usage of QForm are listed below with their corresponding outputs.
+A couple examples of the basic usage of QForm are listed below with their corresponding outputs.
 
 ### A Basic Contact Form
 
@@ -46,6 +46,53 @@ submit
   </div>
   <div class="form-group">
     <input type="submit" value="Send message" name="field4" id="field4" />
+  </div>
+</form>
+```
+
+### Options Fields
+
+```
+radio
+- name preference
+- [
+  call Call me back
+  email Email me a message
+  mail Send me a letter
+]
+
+checkbox
+- name permission
+- [
+  yes I give my permission to contact me
+]
+
+select
+- name department
+- [
+  sales
+  tech Tech Support
+  receivables
+]
+```
+
+```
+<form>
+  <div class="form-group">
+    <label><input type="radio" name="preference" value="call"/>Call me back</label>
+    <label><input type="radio" name="preference" value="email"/>Email me a message</label>
+    <label><input type="radio" id="preference" name="preference" value="mail"/>Send me a letter</label>
+  </div>
+  <div class="form-group">
+    <label><input type="checkbox" name="permission" value="yes"/>I give my permission to contact me</label>
+  </div>
+  <div class="form-group">
+    <label for="department">Department</label>
+    <select name="department" id="department">
+      <option value="sales">Sales</option>
+      <option value="tech">Tech Support</option>
+      <option value="receivables">Receivables</option>
+    </select>
   </div>
 </form>
 ```

@@ -163,6 +163,7 @@ select
 							}
 						}
 					}
+
 					// add field to model
 					model.Fields = append(model.Fields, field)
 					// return model
