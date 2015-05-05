@@ -175,6 +175,35 @@ select
 			},
 			"field name": {
 				Regex: `^[a-zA-Z][a-zA-Z0-9_-]+`, // grab up to newline
+				ValidateMatch: func(matches []string) (bool, string) {
+					switch matches[0] {
+					case
+						"text",
+						"textarea",
+						"select",
+						"radio",
+						"checkbox",
+						"password",
+						"submit",
+						"button",
+						"color",
+						"date",
+						"datetime",
+						"datetime-local",
+						"email",
+						"month",
+						"number",
+						"range",
+						"search",
+						"tel",
+						"time",
+						"url",
+						"week":
+						return true, ""
+					default:
+						return false, "field name must be valid type (e.g., text, textarea, radio, tel, etc.)"
+					}
+				},
 			},
 			"field attribute": {
 				Constituents: [][]string{{"hyphen", "name", "value?", "newline?"}, {"hyphen", "array", "newline?"}},
